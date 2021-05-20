@@ -4,7 +4,7 @@ import Visual from './VisualTab'
 
 function ChordCard(props) {
     const { data } = props
-    console.log(props)
+
     return (
         <div className="chordDiv">
 

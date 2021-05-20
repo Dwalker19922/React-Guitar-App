@@ -15,7 +15,7 @@ function setActive(toggle) {
 
 }
 function Fret(props) {
-    console.log(props.data)
+  
     const data= props.data
     return (
         <>
@@ -30,7 +30,7 @@ function Fret(props) {
     )
 }
 function BottomString(props) {
-    console.log(props)
+
     const data = setActive(props.data)
     const isMuted = false
 

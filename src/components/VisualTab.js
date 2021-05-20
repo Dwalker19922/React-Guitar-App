@@ -14,6 +14,17 @@ const Mutedstring = () => {
     </>)
 }
 
+const MutedBottom = () => {
+    return (<>
+        <div className="fretB">
+            <p className="muted">X</p>
+        </div>
+        <div className="fretB"></div>
+        <div className="fretB"></div>
+        <div className="fretB"></div>
+        <div className="fretB"></div>
+    </>)
+}
 
 const Visual = (props) => {
 
@@ -22,20 +33,20 @@ const Visual = (props) => {
     const chord = props.data.strings
 
     const data = chord.split(' ')
-    console.log(fpos)
+
 
     const reduced = data.map((item, id) => {
         return item === "X" ? id : "notMuted"
     })
+console.log(reduced)
+    let muteE = reduced[0] === "notMuted" ? false : true
+    let muteA = reduced[1] === "notMuted" ? false : true
+    let muteD = reduced[2] === "notMuted" ? false : true
+    let muteG = reduced[3] === "notMuted" ? false : true
+    let muteB = reduced[4] === "notMuted" ? false : true
+    let muteE2 = reduced[5] === "notMuted" ? false : true
 
-    let muteE = reduced[0] === 0 ? true : false
-    let muteA = reduced[1] === 1 ? true : false
-    let muteD = reduced[2] === 1 ? true : false
-    let muteG = reduced[3] === 1 ? true : false
-    let muteB = reduced[4] === 1 ? true : false
-    let muteE2 = reduced[5] === 1 ? true : false
-
-    console.log(muteG, muteA)
+    console.log(muteB)
 
     return (
         <div className="cont">
@@ -47,7 +58,7 @@ const Visual = (props) => {
                 {muteD === true ? <Mutedstring /> : <String data={data[2]} fpos={fpos[2]} />}
                 {muteG === true ? <Mutedstring /> : <String data={data[3]} fpos={fpos[3]} />}
                 {muteB === true ? <Mutedstring /> : <String data={data[4]} fpos={fpos[4]} />}
-                {muteE2 === true ? <Mutedstring /> :<BottomString data={data[5]} isMuted={false} fpos={fpos[5]} />}
+                {muteE2 === true ? <MutedBottom /> :<BottomString data={data[5]} isMuted={false} fpos={fpos[5]} />}
             </div>
         </div>
 
