@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import{newSearch,searchValue}from '../actions/actions';
 import {connect} from 'react-redux';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles({
   nav: {
@@ -36,13 +37,7 @@ const useStyles = makeStyles({
     color: 'white',
 
   },
-  Button2:{
-    backgroundImage:`url(${fire})`,
-    backgroundSize: "40px",
-   borderRadius:"100%",
-    color: 'white',
-
-  },
+  
   search:{
     background:"white",
    borderRadius:"20%",
@@ -63,6 +58,38 @@ const useStyles = makeStyles({
 
   marginRight:""}
   });
+
+  const smallStyles =makeStyles({
+    Menu:{
+      color:"white",
+      fontSize:"300%",
+      marginLeft:"0%"
+     
+   
+      },
+
+  })
+  const mobileStyles =makeStyles({
+    search:{
+      background:"white",
+     borderRadius:"20%",
+      border:"1px solid navy",
+      height:"50%",
+      minHeight:"40px",
+      maxWidth:"40%",
+
+    },
+
+  })
+  const xSmallStyles =makeStyles({
+    navButton: {
+      backgroundImage:`url(${fire})`,
+      backgroundSize: "40px",
+      borderRadius:"100%",
+      color: 'white',
+      maxWidth:"10%"
+    }
+  })
 
  function Header(props) {
    const{push}= useHistory()
@@ -88,10 +115,17 @@ const handleSubmits = (e) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const classes = useStyles();
+  const standard = useStyles();
+  const small = useMediaQuery('(max-width:800px)');
+  const Ismobile = useMediaQuery('(max-width:350px)');
+  const smallScrn=smallStyles()
+  const mobile=mobileStyles()
+  const xSmall= xSmallStyles()
+  const isSmall=useMediaQuery('(max-width:200px)')
+  console.log(isSmall)
   return(
-  <div className={classes.nav}>
-      < MenuIcon className={classes.Menu} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}/>
+  <div className={standard.nav}>
+     { small===false? < MenuIcon className={standard.Menu} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}/>:< MenuIcon className={smallScrn.Menu} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}/>}
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -107,14 +141,14 @@ const handleSubmits = (e) => {
         </Link>
         </Menu>
 
-    <div className={classes.container}>
+    <div className={standard.container}>
       <form onSubmit={handleSubmits}>
-    <Input onChange={handleChange} className={classes.search}/>
-    <Button onClick={handleSubmits}  className={classes.navButton}>Search</Button>
+    {Ismobile===true?<Input onChange={handleChange} className={mobile.search}/>:<Input onChange={handleChange} className={standard.search}/>}
+    {isSmall===false?<Button onClick={handleSubmits}  className={standard.navButton}>Search</Button>:<Button onClick={handleSubmits}  className={xSmall.navButton}>Search</Button>}
     </form>
     </div>
      <Link to={"/chords"}>
-    <Button className={classes.Button2}>Chords</Button>
+  
     </Link>
     
   </div>

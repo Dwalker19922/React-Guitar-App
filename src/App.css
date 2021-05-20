@@ -56,7 +56,11 @@
 .link{
   color:rgb(224, 18, 18);
   font-size: 2rem;
-  
+}
+@media (max-width:500px){
+  .link{
+    font-size:1rem
+  }
 }
 
 .chordHeader{
