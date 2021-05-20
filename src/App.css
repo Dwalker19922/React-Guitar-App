@@ -241,12 +241,17 @@
  .VisualTab{
    max-width: 60%;
  }
+ .muted{
+  font-size: 150%;
+  margin-top: -.7em;
+}
   }
   @media (max-width:330px){
     .chordHeader{
       font-size: 150%;
       margin-top: 50%;
     }
+
    }
   @media (max-width:260px){
     .label{
