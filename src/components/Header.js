@@ -12,86 +12,88 @@ import{newSearch,searchValue}from '../actions/actions';
 import {connect} from 'react-redux';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-const useStyles = makeStyles({
-  nav: {
-    background: 'linear-gradient(45deg,#FF0000  10%, #000000 40%)', 
-    border: 0,
-    borderRadius: 3,
-    boxShadow: '0 1px 5px 5px rgb(0, 0, 100)',
-    position: 'fixed',
-    width: '100%',
-    color: 'white',
-    height: "5%",
-    minHeight: "50px",
-    paddingTop:"1%",
-    top:0,
-    display: "flex",
-    flexDirection:"row",
-    flexWrap: "no-wrap",
-    justifyContent:"space-around",
-  },
-  navButton: {
-    backgroundImage:`url(${fire})`,
-    backgroundSize: "40px",
-    borderRadius:"100%",
-    color: 'white',
 
-  },
-  
-  search:{
-    background:"white",
-   borderRadius:"20%",
-    border:"5px solid navy",
-    height:"50%",
-    minHeight:"40px",
-    
-  },
-  Menu:{
-    color:"black",
-    fontSize:"300%",
-    marginLeft:"-10%"
-   
- 
+
+ function Header(props) {
+  const useStyles = makeStyles({
+    nav: {
+      background: 'linear-gradient(45deg,#FF0000  10%, #000000 40%)', 
+      border: 0,
+      borderRadius: 3,
+      boxShadow: '0 1px 5px 5px rgb(0, 0, 100)',
+      position: 'fixed',
+      width: '100%',
+      color: 'white',
+      height: "5%",
+      minHeight: "50px",
+      paddingTop:"1%",
+      top:0,
+      display: "flex",
+      flexDirection:"row",
+      flexWrap: "no-wrap",
+      justifyContent:"space-around",
     },
-    container:{
-      marginLeft:"-0%",
-
-  marginRight:""}
-  });
-
-  const smallStyles =makeStyles({
-    Menu:{
-      color:"white",
-      fontSize:"300%",
-      marginLeft:"0%"
-     
-   
-      },
-
-  })
-  const mobileStyles =makeStyles({
-    search:{
-      background:"white",
-     borderRadius:"20%",
-      border:"1px solid navy",
-      height:"50%",
-      minHeight:"40px",
-      maxWidth:"40%",
-
-    },
-
-  })
-  const xSmallStyles =makeStyles({
     navButton: {
       backgroundImage:`url(${fire})`,
       backgroundSize: "40px",
       borderRadius:"100%",
       color: 'white',
-      maxWidth:"10%"
-    }
-  })
-
- function Header(props) {
+  
+    },
+    
+    search:{
+      background:"white",
+     borderRadius:"20%",
+      border:"5px solid navy",
+      height:"50%",
+      minHeight:"40px",
+      
+    },
+    Menu:{
+      color:"black",
+      fontSize:"300%",
+      marginLeft:"-10%"
+     
+   
+      },
+      container:{
+        marginLeft:"-0%",
+  
+    marginRight:""}
+    });
+  
+    const smallStyles =makeStyles({
+      Menu:{
+        color:"white",
+        fontSize:"300%",
+        marginLeft:"0%",
+       maxWidth:"10%"
+     
+        },
+  
+    })
+    const mobileStyles =makeStyles({
+      search:{
+        background:"white",
+       borderRadius:"20%",
+        border:"1px solid navy",
+        height:"50%",
+        minHeight:"40px",
+        maxWidth:"40%",
+  
+      },
+  
+    })
+    const xSmallStyles =makeStyles({
+      navButton: {
+        backgroundImage:`url(${fire})`,
+        backgroundSize: "40px",
+        borderRadius:"100%",
+        color: 'white',
+        width:"1px",
+        fontSize:"10%"
+      }
+    })
    const{push}= useHistory()
   const handleChange = (e) => {
     e.preventDefault();
@@ -121,7 +123,7 @@ const handleSubmits = (e) => {
   const smallScrn=smallStyles()
   const mobile=mobileStyles()
   const xSmall= xSmallStyles()
-  const isSmall=useMediaQuery('(max-width:200px)')
+  const isSmall=useMediaQuery('(max-width:175px)')
   console.log(isSmall)
   return(
   <div className={standard.nav}>

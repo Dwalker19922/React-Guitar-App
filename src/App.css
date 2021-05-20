@@ -56,12 +56,9 @@
 .link{
   color:rgb(224, 18, 18);
   font-size: 2rem;
+  text-align: center;
 }
-@media (max-width:500px){
-  .link{
-    font-size:1rem
-  }
-}
+
 
 .chordHeader{
   color:rgb(56, 183, 233);
@@ -206,3 +203,115 @@
     margin-top:1%;
     width:100%;
   }
+  @media (max-width:900px){
+    .label{
+      font-size: 140%;
+    }
+  .chordHeader{
+    font-size: 400%;
+  }}
+  @media (max-width:700px){
+    .label{
+      font-size: 140%;
+    }
+  .chordHeader{
+    font-size: 300%;
+    margin-top: 20%;
+  }}
+  @media (max-width:500px){
+    .link{
+      font-size:1rem
+    }
+    .chordHeader{
+      font-size: 200%;
+      margin-top: 20%;
+    }
+  }
+  @media (max-width:450px){
+ .label{
+   font-size: 140%;
+ }
+ .search{
+  font-size: 90%;
+}
+.VisualTab{
+  max-width: 80%;
+}}
+@media (max-width:360px){
+ .VisualTab{
+   max-width: 60%;
+ }
+  }
+  @media (max-width:330px){
+    .chordHeader{
+      font-size: 150%;
+      margin-top: 50%;
+    }
+   }
+  @media (max-width:260px){
+    .label{
+      font-size: 100%;
+    }
+    .VisualTab{
+      max-width: 60%;
+    }
+    .chordDiv{
+      width: 100%;
+    }
+    .chordHeader{
+      font-size: 100%;
+      margin-top: 50%;
+    }
+    .input{
+      max-width: 100%;
+    }
+   
+    .search{
+      font-size: 70%;
+    }
+     }
+ 
+     @media (max-width:200px){
+       .input{
+         max-width: 50%;
+       }
+      .label{
+        font-size: 90%;
+      }
+      .name{
+        font-size: 290%;
+      }
+      .VisualTab{
+        max-width: 54%;
+      }
+      .chordDiv{
+        border-radius: 3%;
+      }
+      .homeDiv{
+       background-image: none;
+       margin-top: 40%;
+      }
+      .chordHeader{
+        font-size: 80%;
+        margin-top: 50%;
+      }
+      .muted{
+        font-size: 100%;
+      }
+      .indicator{
+        border:.1rem solid rgb(219, 21, 21);
+        border-radius:50%;
+        text-align: center;
+        padding:1%;
+        width:40%;
+        height: 15px;
+        margin:0 auto;
+        margin-top:-.7rem;
+        background-color: rgb(255, 0, 0);
+        font-size: 60%;
+      }
+      .search{
+        font-size: 50%;
+      }
+     
+       }
